@@ -1,0 +1,18 @@
+{
+  "name": "sms-claude-bot",
+  "version": "1.0.0",
+  "description": "Two-way SMS bot connecting your phone to Claude via Twilio",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.102.0",
+    "express": "^4.21.2",
+    "twilio": "^5.4.0"
+  }
+}
