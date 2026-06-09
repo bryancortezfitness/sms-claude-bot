@@ -130,6 +130,35 @@ app.post("/send", async (req, res) => {
   }
 });
 
+// --- SMS program terms & conditions (required for A2P 10DLC campaign) ---
+app.get("/terms", (_req, res) => {
+  res.type("html").send(`<!doctype html><html><head><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMS Program Terms &amp; Conditions</title>
+  <style>body{font-family:system-ui,Arial,sans-serif;max-width:680px;margin:40px auto;padding:0 18px;line-height:1.55;color:#222}h1{font-size:1.4rem}h2{font-size:1.05rem;margin-top:1.6em}</style>
+  </head><body>
+  <h1>SMS Program Terms &amp; Conditions</h1>
+  <p><strong>Program name:</strong> Bryan Cortez Personal Assistant</p>
+  <h2>Program description</h2>
+  <p>This is a personal assistant text line for the account owner. It sends the owner
+  accountability reminders, daily briefings, and task recaps, and replies to messages the
+  owner sends to the line. The only recipient is the account owner, who opted in by
+  configuring and texting the service from their own phone.</p>
+  <h2>Message frequency</h2>
+  <p>Message frequency varies based on the owner&#39;s settings and activity.</p>
+  <h2>Cost</h2>
+  <p>Message and data rates may apply.</p>
+  <h2>Help &amp; opt-out</h2>
+  <p>Text <strong>HELP</strong> for help. Text <strong>STOP</strong> to cancel and stop
+  receiving messages at any time.</p>
+  <h2>Support</h2>
+  <p>For support, contact bryancortezfitness@gmail.com.</p>
+  <h2>Privacy</h2>
+  <p>We do not sell or share mobile information or opt-in data with third parties for
+  their marketing purposes.</p>
+  </body></html>`);
+});
+
 // --- health check ---
 app.get("/", (_req, res) => res.send("SMS-Claude bot is running."));
 
